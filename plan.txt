@@ -1,8 +1,9 @@
-1. make the text adventure
-2. add rates and save to file
-3. add a quest number 2
-4. make a display version 
-5. get print out the creadits
-6. add an mode and diffculty choser
-7. make the credits moving down(use the time module)
-8. make copy source code option
+1. make the text adventure (done)
+2. add rates and save to file (done)
+3. get print out the creadits
+4. make the credits moving down(use the time module)
+5. add a quest number 2
+6. make a display version 
+7. get print out the creadits
+8. add an mode and diffculty choser
+9. make copy source code option
