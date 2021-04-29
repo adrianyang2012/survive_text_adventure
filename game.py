@@ -79,6 +79,8 @@ def grassy_hills():
     jungle()
 def start():
   name = input("what is you name")
+  print("lets go!")
+  print("you been traped in a moutian and had to live in a forest for 3 weeks")
   grassy_hills()
 # ------------------main-----------------------------------#
 start()
