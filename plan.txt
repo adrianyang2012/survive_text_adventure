@@ -1,0 +1,5 @@
+1. make the text adventure
+2. add rates and save to file
+3. add a quest number 2
+4. make a display version 
+5. get print out the creadits
