@@ -3,3 +3,6 @@
 3. add a quest number 2
 4. make a display version 
 5. get print out the creadits
+6. add an mode and diffculty choser
+7. make the credits moving down(use the time module)
+8. make copy source code option
