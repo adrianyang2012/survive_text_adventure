@@ -7,5 +7,7 @@
 7. get print out the creadits
 8. add an mode and diffculty choser
 9. make copy source code option
-10. add music
- 
+10.add music
+11.add a  share link button
+12.create a button for the display version
+13.make a progress bar
