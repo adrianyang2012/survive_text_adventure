@@ -1,16 +1,45 @@
+#by Adrian 
+#completed version 0.0.2 on 4/29/2021
+import time
+things = {
+    "author":"Adrian",
+    "date_made":"5/3/2021",
+    "current_date":time.strftime( "%D  %H %I %P",time.localtime()),
+    "current":"0.0.2",
 
+    "helpers":{"bug_cleaner":"Lucas","Date adder":"Lucas",
+    "code tester":"sisters"
+      }
+}
+rate_ = True
+name = input("what is you name")
+if name == things["author"] or name == things["helpers"]["bug_cleaner"]:
+  print("--------------------editing mode-------------------------")
+  rate_ = False
 def game_over(message):
   print(message)
   yn = input("do you want to play again > ")
   if yn == "yes" or yn == "yep" or yn == "of course":
     start()
   else:
-    with open("rates.txt","a") as rates:
-      stars = input("how many stars")
-      rates.write(input("how would you rate this game"))
-      rates.write(f"{stars} stars")
-    print("thanks for playing")
-    exit("done")
+    if rate_:
+      with open("rates.txt","a") as rates:
+        rates.write(f"{name}:")
+        stars = input("how many stars")
+        rates.write(input("how would you rate this game")+":")
+        rates.write(f"{stars}stars"+" ")
+      print("thanks for playing")
+      print("----------------credits-------------------")
+      for i in range(0,30):
+        print(" ")
+      for x in things.keys():
+        print(x,":",things[x])
+      for i in range(0,20):
+        print(" ")
+      for i in range(0,30):
+        time.sleep(0.08)
+        print(" ")
+    exit(keep_kernel=True)
 
 def hot_tub():
   print("not very polite football players are chatting they start staring at you")
@@ -32,8 +61,12 @@ def shop():
     game_over("they are to mean  and strong")
   elif "emergency" in choice:
     hot_tub()
+  #fun stuff
+  elif "piano" in choice:
+    raise IndexError("there is no piano in the shop")
   else:
     game_over("you go out the door but you broke the glass so you get cought by a police")
+  
 def cave():
   print("you see a bear")
   print("you see a path out")
@@ -78,7 +111,7 @@ def grassy_hills():
   else:
     jungle()
 def start():
-  name = input("what is you name")
+
   print("lets go!")
   print("you been traped in a moutian and had to live in a forest for 3 weeks")
   grassy_hills()
