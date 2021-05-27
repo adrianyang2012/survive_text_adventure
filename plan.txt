@@ -1,8 +1,14 @@
 1. make the text adventure (done)
 2. add rates and save to file (done)
+<<<<<<< Updated upstream
 3. get print out the creadits(done)
 4. make the credits moving down(use the time module) (done)
 5. add a quest number 2
+=======
+3. get print out the creadits
+4. make the credits moving down(use the time module)
+5. add a quest number 2(done)
+>>>>>>> Stashed changes
 6. make a display version 
 7. get print out the creadits
 8. add an mode and diffculty choser
