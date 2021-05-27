@@ -40,6 +40,7 @@ def game_over(message):
       with open("rates.txt","a") as rates:
         rates.write(f"{name}:")
         rates.write(input("how would you rate this game")+":")
+        stars = input("how many stars?")
         rates.write(f"{stars}stars"+" ")
       print("thanks for playing")
       print("----------------credits-------------------")
@@ -102,7 +103,7 @@ def home():
   print("you see a trash can that is wiggling")
   print("you also see the bathroom that has a no sink and has a hole")
   choice = input("")
-  if 'hole' in choice:
+  if 'bathroom' in choice:
     hole()    
   else:
     game_over('you get stinky and you lost')  
@@ -297,3 +298,4 @@ if plat == "__hacked__":
     start()
 #------------------------------------------------------------editors_only---------------------#
 print("any bugs?")
+
