@@ -1,10 +1,11 @@
 #by Adrian 
 #completed version 1.0.3 on 5/5/2021
-
+#-------------------setup-------------------#
 plat = "__main__"  #CHOSE THE PLATFROM
-global plat         #let the player chose a platform
+global plat        #let the player chose a platform
 g_opened = True    #players the deafalt one is True
 global g_opened    #if someone does not want to run something he will not play it
+tiger = True       #the tiger is alive
 #see if the player wants
 if not g_opened:
   exit(keep_kernel=True)
@@ -13,13 +14,14 @@ import time        #get the time module
 things = {
     "author":"Adrian",
     "date_made":"5/3/2021",
-    "current_date":time.strftime( "%D %H %I %P",time.localtime()),
+    "current_date":time.strftime( "%D %H",time.localtime()),
     "current":"0.0.3",
 
     "helpers":{"bug_cleaner":"Lucas","Date adder":"Lucas",
     "code tester":"Anita"
       }
 }
+
 secret = 0           #secret code
 rate_ = True         #first if  on the botom is  not true it will do nothing so deafult is True
 name = input("what is you name")             #get the name
@@ -51,7 +53,7 @@ def game_over(message):
       for i in range(0,10):
         time.sleep(0.08)
         print(" ")
-        raise EOFError()
+        raise EOFError('thanks for playing')
 
 
 
@@ -59,7 +61,7 @@ def game_over(message):
         if m.lower() in ["bye","what oh no!","go away","hehe"]:
           plat="__hacked__"
     else:
-      raise EOFError()
+      
       #---------#
       
       if rate_:
@@ -70,6 +72,12 @@ def game_over(message):
         plat="__hacked__"                            #the player hacked it
 def mobilemini():
   print("you see a mobile mini truck")
+  print("do you want to call the police or smush the person using mobilemini")
+  choice = input("> ")
+  if "call" in choice:
+    pass
+  else:
+    game_over("that person escaped and you got caught")                   
 def street():
   print("you see a man in a broken clothes with a peice of the water sprayer in a sink")
   print("you see a apple shop")
@@ -116,6 +124,8 @@ def hot_tub():
   elif "exit" in choice:
     print("congraglations now you are home!")
     home()
+  elif "smack them" in choice:
+    raise ValueError("your musles are broken so you value of calories is not enough")
 def shop():
   print("you saw loots of mean buys")               
   print("you brang a stick from the cave")
@@ -148,6 +158,7 @@ def cave():
     print("you went to a city! you got out and went a shop!")
     shop()
 def jungle():
+  global tiger
   print("you see a hill near you ")
   print("then a monkey swings and clears of a leaf and you see a cave")
   print("there is a parrot playing above")
@@ -157,8 +168,24 @@ def jungle():
     grassy_hills()
   elif "cave" in choice:
     cave()
+  elif "split the tiger into bits" in choice:
+    print("ok")
+    tiger = False
+    tiger_ = "tiger"
+    print("first stretch the tiger")
+    tiger_ = "t i g e r"
+    print(f"stretched tiger:{tiger_}")
+    tiger_ = tiger_.split()
+    print(f"here is it {tiger_}")
+    jungle()
+
+
+
   else:
-    game_over("you catch the parrot and the tiger are mad")
+    if tiger:
+      game_over("you catch the parrot and the tiger are mad")
+    else:
+      game_over("you catch the parrot and the lion are mad")
 def dessert():
   print("you see a very dry village on the left and a jungle peaking out of  a big tree")
   print("what do you do")
@@ -175,8 +202,8 @@ def grassy_hills():
     dessert()
   elif "pond" in choice:
     game_over("a crocadile snaps you up")
-  elif "go_to_end" in choice:
-    hot_tub()
+  elif "go_to_end" in choice and secret == 1:
+    game_over("")
   else:
     jungle()
 def start():
@@ -205,11 +232,11 @@ def play_mini_games():
     print("chose a random seed")
     print("see if you can figure out how many islands")
     choice = int(input("seed ?> "))                  #gets a seed the int one gets a number
-    if seed >= 0:
+    if seed <= 0:
       print(list("""ooo
       ooo
       ooo"""))
-    else:                                           #if land== true
+    else:
       import random
       li = []
       for i in range(0,9):
@@ -221,7 +248,7 @@ def play_mini_games():
           li.append("1")
         else:
           li.append("0")
-      print("li")
+      print(li)
   else:
     score = 0
     print("what is 6+9")
@@ -255,7 +282,7 @@ def play_mini_games():
       score+=2
     else: print("no")
     print("you will see your iq ")
-    print("calculating")
+    print("calculating...")
     if score <= 1:
       print("your math iq is 10")
     elif score <=3:
@@ -266,7 +293,7 @@ def play_mini_games():
       print("your math iq is 80")
     elif score == 6:
       print("your math iq is 95")
-    elif score >= 8:
+    elif score <= 8:
       print("your math iq is 100")
     else:
       print("your math iq is 115")
@@ -297,5 +324,7 @@ if plat == "__hacked__":
       exit(keep_kernel=True) 
     start()
 #------------------------------------------------------------editors_only---------------------#
-print("any bugs?")
-
+if not rate_:
+  print("any bugs?")
+  if input("") == 'yes':
+    bugs_list.append(input("what is the bug?"))
